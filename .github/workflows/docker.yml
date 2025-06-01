@@ -23,15 +23,6 @@ jobs:
       - name: Prepare logs directory
         run: |
           mkdir -p logs
-          chmod -R 777 logs
-          if [ -z "$(ls -A logs)" ]; then
-            echo "No logs generated, creating dummy.log" > logs/dummy.log
-          fi
-
-
-      - name: Create dummy log if logs empty
-        run: |
-          mkdir -p logs
           if [ -z "$(ls -A logs)" ]; then
             echo "No logs generated, creating dummy.log" > logs/dummy.log
           fi
