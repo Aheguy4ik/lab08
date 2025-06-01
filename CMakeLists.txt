@@ -8,19 +8,21 @@ HunterGate(
 
 project(print)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 set(PRINT_VERSION_STRING "v${PRINT_VERSION}")
 
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
-include_directories(include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_library(print STATIC src/print.cpp)
 
 add_executable(demo demo/main.cpp)
 target_link_libraries(demo print)
 
-# Добавляем тестовый исполняемый
 add_executable(test_print test/test_print.cpp)
 target_link_libraries(test_print print GTest::gtest_main)
 
