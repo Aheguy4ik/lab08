@@ -22,10 +22,9 @@ jobs:
 
       - name: Prepare logs directory
         run: |
-          mkdir -p logs
-          if [ -z "$(ls -A logs)" ]; then
-            echo "No logs generated, creating dummy.log" > logs/dummy.log
-          fi
+          rm -rf logs
+          mkdir logs
+          echo "No logs generated, creating dummy.log" > logs/dummy.log
 
       - name: Check logs directory
         run: ls -R logs/
