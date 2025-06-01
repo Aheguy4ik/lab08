@@ -13,12 +13,19 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-      
+
       - name: Build Docker image
         run: docker build -t logger .
-        
+
       - name: Run Docker container
         run: docker run --rm -v "${{ github.workspace }}/logs/:/home/logs/" logger
+
+      - name: Create dummy log if logs empty
+        run: |
+          mkdir -p logs
+          if [ -z "$(ls -A logs)" ]; then
+            echo "No logs generated, creating dummy.log" > logs/dummy.log
+          fi
 
       - name: Check logs directory
         run: ls -R logs/

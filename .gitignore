@@ -1,0 +1,19 @@
+# Сборочные артефакты
+_build/
+_install/
+
+# Логи и временные файлы
+logs/
+*.log
+
+# IDE и OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# CMake временные файлы
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
