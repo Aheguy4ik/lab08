@@ -2,18 +2,30 @@
 _build/
 _install/
 
-# Логи и временные файлы
+# Логи
 logs/
-*.log
 
-# IDE и OS
+# Docker-related
+*.log
+*.tmp
+
+# Кэш и временные файлы
+*.o
+*.obj
+*.exe
+*.dll
+
+# Системные и IDE файлы (пример для Linux, Windows, VSCode)
+.DS_Store
+Thumbs.db
 .vscode/
 .idea/
 *.swp
-.DS_Store
 
-# CMake временные файлы
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
+# Docker intermediate stuff (если вдруг просачивается)
+adac4cf2093e
+e6a23f156c7a
+f9a80a55f492
+1bfc16578b17
+8b1b812c2652
+8b1b812c2652
